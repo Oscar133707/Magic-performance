@@ -100,6 +100,9 @@ const ServiceDetail: React.FC = () => {
                 <p className="text-white/80 text-base leading-relaxed">{point}</p>
               </div>
             ))}
+            {Array.from({ length: (3 - (service.problemPoints.length % 3)) % 3 }).map((_, i) => (
+              <div key={`fill-${i}`} className="bg-black hidden lg:block" />
+            ))}
           </div>
         </div>
       </section>
