@@ -43,7 +43,7 @@ const Navbar: React.FC = () => {
         
         {/* Logo - Left Side */}
         <Link to="/" className={`text-2xl font-extrabold tracking-tighter uppercase z-50 group ${textColorClass} transition-colors duration-300`}>
-          Magic<span className="text-[#14a2ff] transition-transform duration-300 group-hover:scale-150 inline-block">.</span>Performance
+          Clever<span className="text-[#14a2ff] transition-transform duration-300 group-hover:scale-150 inline-block">.</span>Coaching
         </Link>
 
         {/* Right Side - Nav Links and Contact Button */}
