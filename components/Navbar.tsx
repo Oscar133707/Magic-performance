@@ -6,7 +6,7 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  const isHome = location.pathname === '/';
+  const hasDarkHero = location.pathname === '/' || location.pathname.startsWith('/services');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,6 +18,7 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     setIsOpen(false);
+    setScrolled(false);
   }, [location]);
 
   const navLinks = [
@@ -26,17 +27,13 @@ const Navbar: React.FC = () => {
     { name: 'Services', path: '/services' },
   ];
 
-  // Text color logic: White if on Home AND not scrolled, otherwise Black
   const getTextColor = () => {
-    if (isOpen) return 'text-black'; // Mobile menu always black text
-    if (isHome && !scrolled) return 'text-white';
+    if (isOpen) return 'text-black';
+    if (hasDarkHero && !scrolled) return 'text-white';
     return 'text-black';
   };
 
-  const getHoverColor = () => {
-    if (isHome && !scrolled) return 'group-hover:text-[#14a2ff]';
-    return 'group-hover:text-[#14a2ff]';
-  };
+  const getHoverColor = () => 'group-hover:text-[#14a2ff]';
 
   const textColorClass = getTextColor();
 
@@ -60,7 +57,7 @@ const Navbar: React.FC = () => {
                 className={`text-sm font-bold tracking-wide uppercase transition-colors duration-300 relative group ${textColorClass}`}
               >
                 <span className={getHoverColor()}>{link.name}</span>
-                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-[#14a2ff] transition-all duration-300 group-hover:w-full ${location.pathname === link.path && !isHome ? 'w-full' : ''}`}></span>
+                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-[#14a2ff] transition-all duration-300 group-hover:w-full ${location.pathname === link.path && scrolled ? 'w-full' : ''}`}></span>
               </Link>
             ))}
           </div>
@@ -84,19 +81,21 @@ const Navbar: React.FC = () => {
         </button>
 
         {/* Mobile Nav Overlay */}
-        <div className={`fixed inset-0 bg-white z-40 transform transition-transform duration-500 cubic-bezier(0.77,0,0.175,1) ${isOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden flex flex-col justify-center items-center space-y-8`}>
-          {navLinks.map((link) => (
-            <Link 
-              key={link.name} 
-              to={link.path} 
-              className={`text-3xl font-black tracking-tighter uppercase hover:text-[#14a2ff] transition-colors ${location.pathname === link.path ? 'text-[#14a2ff]' : 'text-black'}`}
+        <div className={`fixed inset-0 bg-white z-40 transform transition-transform duration-500 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden flex flex-col justify-center items-center space-y-8`}>
+          {navLinks.map((link, i) => (
+            <Link
+              key={link.name}
+              to={link.path}
+              className={`text-3xl font-black tracking-tighter uppercase hover:text-[#14a2ff] transition-all duration-300 ${location.pathname === link.path ? 'text-[#14a2ff]' : 'text-black'} ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+              style={{ transitionDelay: isOpen ? `${i * 75 + 150}ms` : '0ms' }}
             >
               {link.name}
             </Link>
           ))}
-          <Link 
-            to="/contact" 
-            className="bg-[#14a2ff] text-white text-lg font-bold uppercase tracking-widest px-10 py-4 rounded-[4px] mt-4"
+          <Link
+            to="/contact"
+            className={`bg-[#14a2ff] text-white text-lg font-bold uppercase tracking-widest px-10 py-4 rounded-[4px] mt-4 transition-all duration-300 ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+            style={{ transitionDelay: isOpen ? `${navLinks.length * 75 + 150}ms` : '0ms' }}
           >
             Contact
           </Link>
