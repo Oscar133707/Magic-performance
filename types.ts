@@ -16,8 +16,14 @@ export interface ServicePackage {
   duration: string;
   price: string;
   description: string;
+  tagline: string;
   features: string[];
   recommendedFor: string;
+  imageUrl: string;
+  phases: { name: string; description: string }[];
+  problemPoints: string[];
+  whoIsItFor: string[];
+  detailSections: { title: string; items: string[] }[];
 }
 
 export interface Testimonial {

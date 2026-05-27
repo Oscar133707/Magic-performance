@@ -137,14 +137,55 @@ export const SERVICES: ServicePackage[] = [
     name: 'Performance Foundation',
     duration: '6 Months',
     price: '€1800',
-    description: 'Ideal for off-season preparation or athletes targeting a specific competition date.',
+    tagline: 'Build the base that competition demands.',
+    description: 'Ideal for off-season preparation or athletes targeting a specific competition date. Six focused months to establish structural integrity and peak capacity.',
     recommendedFor: 'Seasonal Athletes',
+    imageUrl: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1600&auto=format&fit=crop&grayscale',
     features: [
       'Initial Movement & Capacity Assessment',
       'Custom Periodized Programming',
       'Weekly Check-ins & Adjustments',
       'Video Technique Analysis',
       'Nutritional Guidance'
+    ],
+    phases: [
+      { name: 'Assessment', description: 'Deep-dive movement screen, capacity testing, and goal mapping to build your programming baseline.' },
+      { name: 'Foundation', description: 'Structural integrity work — corrective exercise, joint prep, and GPP to bulletproof your body.' },
+      { name: 'Accumulation', description: 'Volume-driven hypertrophy and strength block to build the tissue that power depends on.' },
+      { name: 'Peaking', description: 'Intensity-focused phase that converts accumulated strength into competition-ready performance.' }
+    ],
+    problemPoints: [
+      'You train hard but progress has stalled.',
+      'You\'re heading into a season with no structured plan.',
+      'Nagging injuries keep interrupting your training.',
+      'Your programming is a patchwork of things you found online.',
+      'You want results, but you need a starting point.'
+    ],
+    whoIsItFor: [
+      'Seasonal sport athletes',
+      'Dedicated amateurs',
+      'Athletes returning from injury',
+      'First-time S&C clients'
+    ],
+    detailSections: [
+      {
+        title: 'Programming',
+        items: [
+          'Fully individualized 6-month macrocycle',
+          'Weekly microcycle adjustments based on readiness',
+          'Sport-specific loading strategies',
+          'Mobility and movement quality integration'
+        ]
+      },
+      {
+        title: 'Coaching & Support',
+        items: [
+          'Weekly check-in calls or messages',
+          'Video technique analysis on key lifts',
+          'Nutritional guidance and recovery protocols',
+          'Direct coach access via messaging'
+        ]
+      }
     ]
   },
   {
@@ -152,8 +193,10 @@ export const SERVICES: ServicePackage[] = [
     name: 'Athlete Development',
     duration: '8 Months',
     price: '€2200',
-    description: 'A comprehensive block allowing for hypertrophy, strength, and power phases.',
+    tagline: 'Serious athletes. Serious results.',
+    description: 'A comprehensive block allowing for complete hypertrophy, strength, and power phases with velocity-based training integration.',
     recommendedFor: 'Semi-Pro & Serious Amateurs',
+    imageUrl: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1600&auto=format&fit=crop&grayscale',
     features: [
       'Deep-Dive Biomechanical Analysis',
       'Advanced VBT Integration',
@@ -161,6 +204,46 @@ export const SERVICES: ServicePackage[] = [
       'Daily Readiness Monitoring',
       'Competition Peaking Protocols',
       'Priority Support'
+    ],
+    phases: [
+      { name: 'Assessment', description: 'Comprehensive biomechanical analysis, force-velocity profiling, and detailed sport demands audit.' },
+      { name: 'Hypertrophy', description: 'Strategic muscle building phase targeting sport-specific muscle groups and correcting asymmetries.' },
+      { name: 'Strength', description: 'Max strength development using evidence-based loading protocols and velocity tracking.' },
+      { name: 'Power', description: 'Rate of force development training to convert strength into explosive athletic output.' },
+      { name: 'Peaking', description: 'Taper and sharpening phase timed precisely to your competition or testing date.' }
+    ],
+    problemPoints: [
+      'You\'ve hit a ceiling in your current training.',
+      'You want data behind every session, not guesswork.',
+      'Your strength isn\'t translating to on-field performance.',
+      'You\'ve outgrown generic programming.',
+      'You need a coach who understands what semi-pro demands.'
+    ],
+    whoIsItFor: [
+      'Semi-professional athletes',
+      'Serious competitive amateurs',
+      'Athletes with a major competition in sight',
+      'High-performers chasing measurable gains'
+    ],
+    detailSections: [
+      {
+        title: 'Programming',
+        items: [
+          'Full 8-month periodized macrocycle',
+          'Velocity-Based Training (VBT) integration',
+          'Daily readiness questionnaire with load adjustments',
+          'Advanced competition peaking protocols'
+        ]
+      },
+      {
+        title: 'Coaching & Support',
+        items: [
+          'Bi-weekly video consultations',
+          'Detailed biomechanical analysis reports',
+          'Priority response support',
+          'Ongoing load and adaptation monitoring'
+        ]
+      }
     ]
   },
   {
@@ -168,8 +251,10 @@ export const SERVICES: ServicePackage[] = [
     name: 'Elite Mastery',
     duration: '12 Months',
     price: '€3000',
-    description: 'Full annual macrocycle management for year-round performance optimization.',
+    tagline: 'Full-year management for elite performers.',
+    description: 'Complete annual macrocycle management for professional athletes who demand year-round optimization, injury prevention, and peak performance timing.',
     recommendedFor: 'Professional Athletes',
+    imageUrl: 'https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?q=80&w=1600&auto=format&fit=crop&grayscale',
     features: [
       'Complete Annual Periodization',
       'Load Management & Injury Prevention',
@@ -177,6 +262,45 @@ export const SERVICES: ServicePackage[] = [
       'Game/Match Performance Review',
       'Collaboration with Medical Staff',
       '24/7 Coach Access'
+    ],
+    phases: [
+      { name: 'Off-Season Foundation', description: 'Structural repair, hypertrophy, and general capacity work during the lowest competition density.' },
+      { name: 'Pre-Season Build', description: 'Sport-specific strength and power development with increasing training specificity.' },
+      { name: 'In-Season Maintenance', description: 'Load management to preserve adaptations, prevent injury, and sustain peak output through the full competitive schedule.' },
+      { name: 'Competition Peaking', description: 'Precise tapering protocols aligned to your highest-priority events throughout the year.' }
+    ],
+    problemPoints: [
+      'Managing load across a full competitive season is complex.',
+      'You need a system, not just a program.',
+      'Injuries are costing you competition time.',
+      'Your current setup doesn\'t scale with your career.',
+      'You need a performance partner, not just a coach.'
+    ],
+    whoIsItFor: [
+      'Professional athletes',
+      'Full-time competitive performers',
+      'Athletes with medical and support staff',
+      'Those who demand elite-level accountability'
+    ],
+    detailSections: [
+      {
+        title: 'Programming',
+        items: [
+          'Complete annual macrocycle with in-season and off-season phases',
+          'Real-time load management and adjustment',
+          'Injury prevention and return-to-performance protocols',
+          'Game and match performance analysis integrated into programming'
+        ]
+      },
+      {
+        title: 'Coaching & Support',
+        items: [
+          '24/7 direct coach access',
+          'Unlimited video analysis sessions',
+          'Collaboration with medical, physio, and support staff',
+          'Monthly comprehensive performance reviews'
+        ]
+      }
     ]
   }
 ];
